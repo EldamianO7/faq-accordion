@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Work Sans", sans-serif;
+  color: var(--Purple950);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  background: none;
+  color: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+:root {
+  --White: hsl(0, 100%, 100%);
+  --Purple100: hsl(275, 100%, 97%);
+  --Purple600: hsl(292, 16%, 49%);
+  --Purple950: hsl(292, 42%, 14%);
+  --PurpleHover: hsl(281, 83%, 54%);
+}
+
+body {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 100dvh;
+  background-color: var(--Purple100);
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 18.75rem;
+
+  background-image: url("../assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.center {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 37.5rem;
+}
+
+.faq-window {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  background-color: var(--White);
+  border-radius: 1rem;
+  padding: 2.5rem;
+}
+
+.faq-window__about {
+  display: flex;
+  gap: 1rem;
+}
+
+.faq-window__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.question:not(:last-child)::after {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  right: 0;
+  content: "";
+  border: 1px solid rgba(100, 100, 100, 0.1);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.question-header:focus-visible,
+.question-header:hover {
+  color: var(--PurpleHover);
+}
+
+.question__title {
+  font-weight: 600;
+}
+
+.question-content {
+  color: var(--Purple600);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.question-content--open {
+  max-height: 18.75rem;
+  margin-top: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--PurpleHover);
+}
+
+@media (min-width: 375px) {
+  .background-img {
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+  }
+}
