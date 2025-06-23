@@ -62,7 +62,7 @@
               <img
                 class="expand-icon"
                 src="assets/images/icon-plus.svg"
-                alt=""
+                alt="Unfold icon"
               />
             </button>
 
@@ -145,6 +145,8 @@
           icon.src = isOpen
             ? "assets/images/icon-minus.svg"
             : "assets/images/icon-plus.svg";
+
+          icon.alt = isOpen ? "Fold icon" : "Unfold icon";
 
           button.setAttribute("aria-expanded", isOpen);
         });
