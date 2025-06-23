@@ -158,3 +158,11 @@ body {
     background-image: url("../assets/images/background-pattern-desktop.svg");
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
