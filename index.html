@@ -18,26 +18,31 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/main.css" />
 
     <title>Frontend Mentor | FAQ accordion</title>
   </head>
   <body>
     <div class="background-img"></div>
 
-    <div class="center">
-      <div class="faq-window">
-        <div class="faq-window__about">
+    <main class="center">
+      <article class="faq-window">
+        <header class="faq-window__about">
           <img src="assets/images/icon-star.svg" alt="Star" />
           <h1>FAQs</h1>
-        </div>
+        </header>
 
         <div class="faq-window__questions">
-          <div class="question">
-            <button class="question-header" aria-expanded="true">
-              <p class="question__title">
+          <section class="question" aria-labelledby="question1-title">
+            <button
+              id="question1-title"
+              class="question-header"
+              type="button"
+              aria-expanded="true"
+            >
+              <span class="question__title">
                 What is Frontend Mentor, and how will it help me?
-              </p>
+              </span>
               <img
                 class="expand-icon"
                 src="assets/images/icon-minus.svg"
@@ -53,12 +58,16 @@
                 ideal for portfolio building.
               </p>
             </div>
-          </div>
+          </section>
 
-          <div class="question">
-            <button class="question-header" aria-expanded="false">
-              <p class="question__title">Is Frontend Mentor free?</p>
-
+          <section class="question" aria-labelledby="question2-title">
+            <button
+              id="question2-title"
+              class="question-header"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="question__title">Is Frontend Mentor free?</span>
               <img
                 class="expand-icon"
                 src="assets/images/icon-plus.svg"
@@ -72,13 +81,18 @@
                 challenges...
               </p>
             </div>
-          </div>
+          </section>
 
-          <div class="question">
-            <button class="question-header" aria-expanded="false">
-              <p class="question__title">
+          <section class="question" aria-labelledby="question3-title">
+            <button
+              id="question3-title"
+              class="question-header"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="question__title">
                 Can I use Frontend Mentor projects in my portfolio?
-              </p>
+              </span>
               <img
                 class="expand-icon"
                 src="assets/images/icon-plus.svg"
@@ -93,13 +107,18 @@
                 potential employers!
               </p>
             </div>
-          </div>
+          </section>
 
-          <div class="question">
-            <button class="question-header" aria-expanded="false">
-              <p class="question__title">
-                How can I get help if I'm stuck on a Frontend Mentor challenge?
-              </p>
+          <section class="question" aria-labelledby="question4-title">
+            <button
+              id="question4-title"
+              class="question-header"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="question__title">
+                How can I get help if I'm stuck on a challenge?
+              </span>
               <img
                 class="expand-icon"
                 src="assets/images/icon-plus.svg"
@@ -114,11 +133,11 @@
                 and seek support from other community members.
               </p>
             </div>
-          </div>
+          </section>
         </div>
-      </div>
+      </article>
 
-      <div class="attribution">
+      <footer class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
@@ -128,29 +147,9 @@
           target="_blank"
           >EldamianO7</a
         >.
-      </div>
-    </div>
+      </footer>
+    </main>
 
-    <script>
-      const buttons = document.querySelectorAll(".question-header");
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const content = button
-            .closest(".question")
-            .querySelector(".question-content");
-          const icon = button.querySelector(".expand-icon");
-          const isOpen = content.classList.toggle("question-content--open");
-
-          icon.src = isOpen
-            ? "assets/images/icon-minus.svg"
-            : "assets/images/icon-plus.svg";
-
-          icon.alt = isOpen ? "Fold icon" : "Unfold icon";
-
-          button.setAttribute("aria-expanded", isOpen);
-        });
-      });
-    </script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
